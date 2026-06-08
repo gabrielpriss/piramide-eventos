@@ -1,0 +1,22 @@
+# Saída do build (gerada no Cloudflare Pages via npm run build)
+dist/
+
+# Dependências e cache local
+node_modules/
+.wrangler/
+
+# Fotos originais (pesadas) — as WebP otimizadas em assets/img/ devem ir no repositório
+assets/FOTOS PRIME/
+
+# Assets só para desenvolvimento local / seletor de versões
+assets/print-*.png
+assets/banquet_table.png
+assets/corporate_event.png
+assets/guests_dancing.png
+assets/hero_wedding.png
+assets/party_15anos.png
+assets/logo.jpeg
+assets/logoTransparente.png
+
+.DS_Store
+Thumbs.db

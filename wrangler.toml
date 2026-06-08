@@ -1,0 +1,13 @@
+# Cloudflare Pages — configuração de deploy
+#
+# No painel (Workers & Pages → projeto → Settings → Builds):
+#   Framework preset: None
+#   Build command:    npm run build
+#   Build output:     dist
+#
+# O campo pages_build_output_dir abaixo é obrigatório para o Wrangler
+# reconhecer este arquivo em deploys via Git ou CLI.
+
+name = "piramide-eventos"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./dist"

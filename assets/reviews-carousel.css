@@ -1,0 +1,224 @@
+/* Widget de avaliações Google — estilo carrossel (TrustIndex) */
+.reviews-widget {
+    position: relative;
+    max-width: 100%;
+}
+
+.reviews-widget__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    color: #374151;
+}
+
+.reviews-widget__google {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: inherit;
+}
+
+.reviews-widget__google-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.reviews-widget__score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: inherit;
+}
+
+.reviews-widget__stars {
+    color: #FBBC04;
+    letter-spacing: 0.05em;
+    font-size: 1.125rem;
+}
+
+.reviews-widget__viewport {
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-widget__track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.reviews-widget__slide {
+    flex: 0 0 100%;
+    padding: 0 0.25rem;
+    box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+    .reviews-widget__slide { flex: 0 0 50%; padding: 0 0.5rem; }
+}
+
+@media (min-width: 1024px) {
+    .reviews-widget__slide { flex: 0 0 33.333%; padding: 0 0.625rem; }
+}
+
+/* Cards sempre com fundo claro e texto escuro — evita herança de text-white do tema */
+.reviews-widget__card {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    height: 100%;
+    min-height: 11rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #1f2937;
+}
+
+.reviews-widget__card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.reviews-widget__avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: #f3f4f6;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+}
+
+.reviews-widget__meta-name {
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: #111827;
+}
+
+.reviews-widget__meta-date {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.reviews-widget__card-stars {
+    color: #FBBC04;
+    font-size: 0.8125rem;
+    margin-bottom: 0.625rem;
+}
+
+.reviews-widget__card-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    flex-grow: 1;
+    color: #374151;
+}
+
+.reviews-widget__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.reviews-widget__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.reviews-widget__btn:hover {
+    transform: scale(1.05);
+}
+
+.reviews-widget__btn:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+.reviews-widget__dots {
+    display: flex;
+    gap: 0.375rem;
+    align-items: center;
+}
+
+.reviews-widget__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: #1a1a1a;
+    opacity: 0.35;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.reviews-widget__dot.is-active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Contexto em páginas dark: cabeçalho claro, cards permanecem legíveis */
+.reviews-widget--dark .reviews-widget__header {
+    color: #d1d5db;
+}
+
+.reviews-widget--dark .reviews-widget__google,
+.reviews-widget--dark .reviews-widget__score {
+    color: #d1d5db;
+}
+
+.reviews-widget--dark .reviews-widget__card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35);
+    color: #1f2937;
+}
+
+.reviews-widget--dark .reviews-widget__meta-name {
+    color: #111827;
+}
+
+.reviews-widget--dark .reviews-widget__meta-date {
+    color: #6b7280;
+}
+
+.reviews-widget--dark .reviews-widget__card-text {
+    color: #374151;
+}
+
+.reviews-widget--dark .reviews-widget__avatar {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.reviews-widget--dark .reviews-widget__dot {
+    background: #D4AF37;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reviews-widget__track { transition: none; }
+}
