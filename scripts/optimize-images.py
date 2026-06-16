@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gera versões WebP redimensionadas das fotos usadas no site."""
+"""Gera WebP redimensionadas — apenas imagens da versão dark (produção)."""
 
 from pathlib import Path
 from PIL import Image
@@ -8,13 +8,31 @@ ROOT = Path(__file__).resolve().parents[1]
 SRC_DIR = ROOT / "assets" / "FOTOS PRIME"
 OUT_DIR = ROOT / "assets" / "img"
 
+# Fotos usadas exclusivamente na versão dark
 USED = [
-    "AR2A0823.jpg", "IMG_1747.jpg", "IMG_9853.JPG", "BL7A8780.jpg",
-    "AR2A0826.jpg", "IMG_9851.JPG", "BL7A8783.jpg", "BL7A8787.jpg",
-    "BL7A8789.jpg", "AR2A0821.jpg", "AR2A0830.jpg", "IMG_9855.JPG", "BL7A8782.jpg",
+    "AR2A0823.jpg",
+    "IMG_1747.jpg",
+    "IMG_9853.JPG",
+    "BL7A8780.jpg",
+    "AR2A0826.jpg",
+    "IMG_9851.JPG",
+    "BL7A8783.jpg",
+    "BL7A8787.jpg",
 ]
 
-SIZES = {"xl": 1600, "lg": 1200, "md": 800}
+# Tamanhos necessários por foto (build.sh copia apenas estes)
+SIZES_BY_STEM = {
+    "AR2A0823": ("xl", "lg", "md"),
+    "IMG_1747": ("lg", "md"),
+    "BL7A8780": ("lg", "md"),
+    "BL7A8783": ("lg", "md"),
+    "IMG_9853": ("lg",),
+    "AR2A0826": ("lg",),
+    "IMG_9851": ("lg",),
+    "BL7A8787": ("lg",),
+}
+
+SIZE_WIDTH = {"xl": 1600, "lg": 1200, "md": 800}
 LOGO_SIZES = {"lg": 840, "sm": 320}
 QUALITY = 82
 
@@ -41,9 +59,13 @@ def main() -> None:
         if not src.exists():
             raise FileNotFoundError(src)
         stem = Path(name).stem
+        labels = SIZES_BY_STEM.get(stem, ("lg", "md"))
         with Image.open(src) as im:
-            for label, width in SIZES.items():
-                save_webp(resize_to_width(im, width), OUT_DIR / f"{stem}-{label}.webp")
+            for label in labels:
+                save_webp(
+                    resize_to_width(im, SIZE_WIDTH[label]),
+                    OUT_DIR / f"{stem}-{label}.webp",
+                )
 
     logo_src = ROOT / "assets" / "logoTransparente.png"
     if logo_src.exists():
@@ -54,7 +76,7 @@ def main() -> None:
                 resized = resize_to_width(im, width)
                 resized.save(OUT_DIR / f"logo-{label}.webp", "WEBP", quality=90, method=6)
 
-    print(f"OK: arquivos em {OUT_DIR}")
+    print(f"OK: versão dark — arquivos em {OUT_DIR}")
 
 
 if __name__ == "__main__":

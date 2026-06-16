@@ -8,13 +8,13 @@ dist/
 *.log
 Thumbs.db
 
-# Config legado (usar wrangler.jsonc)
+# Config legado
 wrangler.toml
 
 # Fotos originais (pesadas) — WebP otimizadas em assets/img/
 assets/FOTOS PRIME/
 
-# Assets só para desenvolvimento / seletor de versões
+# Assets só para desenvolvimento local
 assets/print-*.png
 assets/banquet_table.png
 assets/corporate_event.png
@@ -23,8 +23,3 @@ assets/hero_wedding.png
 assets/party_15anos.png
 assets/logo.jpeg
 assets/logoTransparente.png
-
-# Versões alternativas do site (produção = dark)
-index-light.html
-index-mixed.html
-index.html

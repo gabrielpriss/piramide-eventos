@@ -1,12 +1,12 @@
 {
   "name": "piramide-eventos",
   "private": true,
-  "description": "Landing page Espaço Pirâmide Eventos — Cloudflare Pages",
+  "description": "Landing page Espaço Pirâmide Eventos — versão dark (produção)",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "build": "bash scripts/build-dark.sh",
+    "build": "bash scripts/build.sh",
     "build:images": "python3 scripts/optimize-images.py",
     "dev": "npm run build && wrangler pages dev dist --port 8788",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=piramide-eventos --branch=main",

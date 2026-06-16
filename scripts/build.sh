@@ -3,24 +3,21 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-SRC_HTML="$ROOT/index-dark.html"
+SRC_HTML="$ROOT/index.html"
 
-echo "→ Build versão dark para Cloudflare Pages"
+echo "→ Build produção (versão dark) para Cloudflare Pages"
 
 rm -rf "$DIST"
 mkdir -p "$DIST/assets/img"
 
-# Página principal
 sed \
   -e 's/Espaço Pirâmide Eventos | Premium Dark/Espaço Pirâmide Eventos | Curitiba/' \
   "$SRC_HTML" > "$DIST/index.html"
 
-# Assets estáticos
 cp "$ROOT/assets/reviews-carousel.css" "$DIST/assets/"
 cp "$ROOT/assets/reviews-carousel.js" "$DIST/assets/"
 cp "$ROOT/assets/site-config.js" "$DIST/assets/"
 
-# Imagens WebP usadas na versão dark
 IMAGES=(
   logo-sm.webp logo-lg.webp
   AR2A0823-xl.webp AR2A0823-lg.webp AR2A0823-md.webp
@@ -37,13 +34,12 @@ for img in "${IMAGES[@]}"; do
   src="$ROOT/assets/img/$img"
   if [[ ! -f "$src" ]]; then
     echo "ERRO: imagem ausente: $src" >&2
-    echo "Execute: python3 scripts/optimize-images.py" >&2
+    echo "Execute: npm run build:images" >&2
     exit 1
   fi
   cp "$src" "$DIST/assets/img/"
 done
 
-# Cache e segurança (Cloudflare Pages)
 cat > "$DIST/_headers" << 'EOF'
 /*
   X-Content-Type-Options: nosniff
@@ -56,7 +52,6 @@ cat > "$DIST/_headers" << 'EOF'
   Cache-Control: public, max-age=0, must-revalidate
 EOF
 
-# Página 404 (Cloudflare Pages serve automaticamente)
 cat > "$DIST/404.html" << 'EOF'
 <!DOCTYPE html>
 <html lang="pt-BR">
