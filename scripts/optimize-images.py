@@ -17,6 +17,16 @@ GENERAL_USED = [
     "IMG_9851.JPG",
     "BL7A8783.jpg",
     "BL7A8787.jpg",
+    # novas fotos
+    "AR2A0821.jpg",
+    "AR2A0824.jpg",
+    "AR2A0830.jpg",
+    "BL7A8782.jpg",
+    "BL7A8789.jpg",
+    "IMG_8820 2.JPG",
+    "IMG_8821.JPG",
+    "IMG_9855.JPG",
+    "5553c912-8f4d-4035-950c-30d272a38403.JPG",
 ]
 
 DEBUT_SRC = ROOT / "assets" / "15 anos FOTOS PRIME"
@@ -34,6 +44,16 @@ SIZES_BY_STEM = {
     "AR2A0826": ("lg",),
     "IMG_9851": ("lg",),
     "BL7A8787": ("lg",),
+    # novas fotos — galeria
+    "AR2A0821": ("lg", "md", "sm"),
+    "AR2A0824": ("lg", "md", "sm"),
+    "AR2A0830": ("lg", "md", "sm"),
+    "BL7A8782": ("lg", "md", "sm"),
+    "BL7A8789": ("lg", "md", "sm"),
+    "IMG_8820 2": ("lg", "md", "sm"),
+    "IMG_8821": ("lg", "md", "sm"),
+    "IMG_9855": ("lg", "md", "sm"),
+    "5553c912-8f4d-4035-950c-30d272a38403": ("lg", "md", "sm"),
 }
 
 RENAME_MAP = {
@@ -46,6 +66,15 @@ RENAME_MAP = {
     "IMG_1747": "sala-festa-lustre-cristal-roxo",
     "IMG_9851": "mesa-bolo-50anos-espelhada",
     "IMG_9853": "mesa-jantar-flores-azuis",
+    "AR2A0821": "mesa-doces-espelhada-orquideas",
+    "AR2A0824": "salao-formatura-palco-pista",
+    "AR2A0830": "salao-formatura-mesa-flores",
+    "BL7A8782": "salao-formatura-pista-estrelas",
+    "BL7A8789": "lounge-sofa-elegante",
+    "IMG_8820 2": "salao-mesas-brancas-hortensias",
+    "IMG_8821": "mesa-doces-espelhada-hortensias",
+    "IMG_9855": "salao-mesas-pista-espelhada",
+    "5553c912-8f4d-4035-950c-30d272a38403": "pista-espelhada-efeitos-luz",
     # 15 anos FOTOS PRIME
     "BFL09844": "entrada-wonderland-personagens",
     "BFL09800": "porta-entrada-wonderland",
