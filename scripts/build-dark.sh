@@ -89,7 +89,7 @@ EOF
 missing=0
 while IFS= read -r ref; do
   [[ -f "$DIST/$ref" ]] || { echo "ERRO: asset ausente no build: $ref" >&2; missing=$((missing + 1)); }
-done < <(rg -o 'assets/[^"'\''[:space:]]+' "$SOURCE" | sort -u)
+done < <(grep -oE 'assets/[^"'"'"'[:space:]]+' "$SOURCE" | sort -u)
 
 if [[ $missing -gt 0 ]]; then
   echo "ERRO: $missing asset(s) faltando — corrija antes do deploy." >&2

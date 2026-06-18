@@ -1,3 +1,5 @@
+# Cloudflare Pages (deploy via Git)
+# Dashboard: Build command = npm run build | Output = dist | Deploy command = (vazio)
 name = "piramide-eventos"
 compatibility_date = "2026-06-01"
 pages_build_output_dir = "dist"

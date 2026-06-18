@@ -3,18 +3,17 @@
   "private": true,
   "description": "Landing page Espaço Pirâmide Eventos — produção Cloudflare Pages",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "bash scripts/build-dark.sh",
     "build:images": "python3 scripts/optimize-images.py",
     "build:corporativo": "node scripts/convert-heic-corporativo.mjs",
-    "preview": "npm run build && wrangler pages dev ./dist",
-    "deploy": "npm run build && wrangler pages deploy ./dist --project-name=piramide-eventos --branch=main"
+    "preview": "npm run build && npx --yes wrangler@4 pages dev ./dist",
+    "deploy": "npm run build && npx --yes wrangler@4 pages deploy ./dist --project-name=piramide-eventos --branch=main"
   },
   "devDependencies": {
     "heic-decode": "^2.1.0",
-    "sharp": "^0.34.3",
-    "wrangler": "^4.100.0"
+    "sharp": "^0.34.3"
   }
 }
