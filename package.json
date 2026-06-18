@@ -1,19 +1,20 @@
 {
   "name": "piramide-eventos",
   "private": true,
-  "description": "Landing page Espaço Pirâmide Eventos — versão dark (produção)",
+  "description": "Landing page Espaço Pirâmide Eventos — produção Cloudflare Pages",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "build": "bash scripts/build.sh",
+    "build": "bash scripts/build-dark.sh",
     "build:images": "python3 scripts/optimize-images.py",
-    "dev": "npm run build && wrangler pages dev dist --port 8788",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=piramide-eventos",
-    "deploy:pages": "npm run build && wrangler pages deploy dist --project-name=piramide-eventos --branch=main",
-    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=piramide-eventos"
+    "build:corporativo": "node scripts/convert-heic-corporativo.mjs",
+    "preview": "npm run build && wrangler pages dev ./dist",
+    "deploy": "npm run build && wrangler pages deploy ./dist --project-name=piramide-eventos --branch=main"
   },
   "devDependencies": {
+    "heic-decode": "^2.1.0",
+    "sharp": "^0.34.3",
     "wrangler": "^4.100.0"
   }
 }

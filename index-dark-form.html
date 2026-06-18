@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="site" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Pirâmide Eventos | Orçamento Online | Curitiba</title>
+    <meta name="description" content="Salão de eventos no Pilarzinho, Curitiba. Casamentos, 15 anos, corporativo e aniversários para até 200 convidados.">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PVDZ73BD');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/reviews-carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#121212',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            gray: '#888888',
+                            light: '#E0E0E0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #E0E0E0;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, #D4AF37, #F3E5AB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background-image: url("assets/img/salao-piramide-pista-danca-sm.webp");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        @media (min-width: 480px) {
+            .hero-bg { background-image: url("assets/img/salao-piramide-pista-danca-md.webp"); }
+        }
+        @media (min-width: 900px) {
+            .hero-bg { background-image: url("assets/img/salao-piramide-pista-danca-lg.webp"); }
+        }
+        @media (min-width: 1600px) {
+            .hero-bg { background-image: url("assets/img/salao-piramide-pista-danca-xl.webp"); }
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.88) 100%);
+        }
+
+        .hover-gold:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA8A29 100%);
+            color: #050505;
+            transition: all 0.3s ease;
+        }
+        .btn-premium:hover {
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-premium {
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-premium:hover {
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        .img-mask {
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+        }
+
+        :root {
+            --motion-duration: 0.55s;
+            --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .carousel { position: relative; }
+        .carousel__viewport {
+            position: relative; width: 100%; aspect-ratio: 16 / 10;
+            max-height: min(72vh, 580px); overflow: hidden; border-radius: 0.75rem;
+            background: #121212;
+            box-shadow: 0 20px 40px -12px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .carousel__slide {
+            position: absolute; inset: 0; opacity: 0;
+            transition: opacity var(--motion-duration) var(--motion-ease);
+            pointer-events: none;
+        }
+        .carousel__slide.is-active { opacity: 1; pointer-events: auto; z-index: 1; }
+        .carousel__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .carousel__btn {
+            position: absolute; top: 50%; z-index: 10; transform: translateY(-50%);
+            width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center;
+            border-radius: 9999px; background: rgba(212, 175, 55, 0.95); color: #050505; border: none;
+            cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+            transition: background var(--motion-duration) var(--motion-ease), transform var(--motion-duration) var(--motion-ease);
+        }
+        .carousel__btn:hover { background: #D4AF37; transform: translateY(-50%) scale(1.05); }
+        .carousel__btn--prev { left: 0.75rem; }
+        .carousel__btn--next { right: 0.75rem; }
+        .carousel__footer {
+            display: flex; align-items: center; justify-content: center;
+            gap: 1rem; margin-top: 1rem; flex-wrap: wrap;
+        }
+        .carousel__counter {
+            font-size: 0.8125rem; font-weight: 600; color: #D4AF37; min-width: 4.5rem; text-align: center;
+        }
+        .carousel__progress {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+            background: rgba(0, 0, 0, 0.35); z-index: 5;
+        }
+        .carousel__progress-bar {
+            height: 100%; width: 0; background: #D4AF37;
+            animation: carousel-progress var(--carousel-interval, 5s) linear infinite;
+        }
+        @keyframes carousel-progress { from { width: 0; } to { width: 100%; } }
+        .carousel.is-paused .carousel__progress-bar { animation-play-state: paused; }
+
+        #galeria {
+            position: relative;
+            background-image: url('assets/img/salao-formatura-painel-led-md.webp');
+            background-size: cover; background-position: center;
+        }
+        @media (min-width: 900px) {
+            #galeria { background-image: url('assets/img/salao-formatura-painel-led-lg.webp'); }
+        }
+        #galeria::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: rgba(5, 5, 5, 0.82); pointer-events: none;
+        }
+        #galeria > div { position: relative; z-index: 1; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .carousel__progress-bar { animation: none; width: 100%; opacity: 0.5; }
+        }
+
+        .site-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 0;
+        }
+        .site-logo__img {
+            display: block;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .site-logo--hero {
+            margin-bottom: 2rem;
+        }
+        .site-logo--hero .site-logo__img {
+            max-height: 5rem;
+            max-width: min(320px, 80vw);
+        }
+        @media (min-width: 768px) {
+            .site-logo--hero .site-logo__img { max-height: 6.5rem; max-width: 380px; }
+        }
+        @media (min-width: 1024px) {
+            .site-logo--hero .site-logo__img { max-height: 7.5rem; max-width: 420px; }
+        }
+        .site-logo--footer {
+            margin-bottom: 1.5rem;
+        }
+        .site-logo--footer .site-logo__img {
+            max-height: 2.75rem;
+            max-width: 10rem;
+        }
+
+        .historia-carousel .carousel__viewport {
+            aspect-ratio: 4 / 3;
+            max-height: 480px;
+        }
+
+        .produtos-galeria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: calc(100% + 2rem);
+            max-width: calc(100% + 2rem);
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+        @media (min-width: 640px) {
+            .produtos-galeria {
+                width: calc(100% + 3rem);
+                max-width: calc(100% + 3rem);
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+        }
+        @media (min-width: 768px) { .produtos-galeria { grid-template-columns: repeat(3, 1fr); } }
+        .produto-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 2 / 3;
+            background: #000;
+        }
+        .produto-card img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform var(--motion-duration) var(--motion-ease);
+        }
+        .produto-card:hover img { transform: scale(1.07); }
+        .produto-card__overlay {
+            position: absolute; left: 0; right: 0; bottom: 0;
+            padding: 2.5rem 1.5rem 1.75rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, transparent 100%);
+            color: #fff;
+        }
+        .produto-card__titulo {
+            font-size: 1.125rem; font-weight: 700; letter-spacing: 0.02em;
+            margin-bottom: 0.5rem; line-height: 1.25;
+        }
+        @media (min-width: 768px) { .produto-card__titulo { font-size: 1.375rem; } }
+        .produto-card__desc {
+            font-size: 0.875rem; color: rgba(255,255,255,0.88); font-weight: 300;
+            line-height: 1.55;
+        }
+        @media (max-width: 639px) {
+            .produto-card__overlay { padding: 1.5rem 1rem 1.25rem; }
+            .produto-card__titulo { font-size: 0.95rem; }
+        }
+
+        .eventos-light h2, .eventos-light h3 { font-family: 'Outfit', sans-serif; }
+        .eventos-light .eventos-divider { background: #D4AF37; }
+
+        .form-step { display: none; }
+        .form-step.is-active { display: block; }
+        .form-field {
+            width: 100%;
+            background: rgba(18, 18, 18, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            color: #E0E0E0;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-field:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+        }
+        .form-field::placeholder { color: #666; }
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .form-error {
+            color: #ef4444;
+            font-size: 0.8125rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .form-error.is-visible { display: block; }
+        .form-progress {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .form-progress__dot {
+            flex: 1;
+            height: 3px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 999px;
+            transition: background 0.3s ease;
+        }
+        .form-progress__dot.is-active,
+        .form-progress__dot.is-done { background: #D4AF37; }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .form-success.is-visible { display: block; }
+        #orcamento-form.is-submitted .form-step { display: none !important; }
+
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVDZ73BD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Hero Section (Centered Layout) -->
+    <header id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-center relative">
+        <div class="relative z-10 max-w-5xl px-4 flex flex-col items-center">
+            <a href="#inicio" class="site-logo site-logo--hero" aria-label="Espaço Pirâmide Eventos" data-aos="fade-down">
+                <img src="assets/img/logo-piramide-lg.webp" alt="Espaço Pirâmide Eventos" class="site-logo__img" width="840" height="340" fetchpriority="high">
+            </a>
+            <p class="text-brand-gold uppercase tracking-[0.3em] text-sm font-semibold mb-6" data-aos="fade-down" data-aos-delay="100">Bem-vindo à Excelência</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight font-extrabold" data-aos="fade-up" data-aos-delay="100">
+                Seu Evento no Coração de <span class="text-brand-gold">Curitiba</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mb-12" data-aos="fade-up" data-aos-delay="200">
+                Espaço amplo para até <strong class="text-brand-gold font-semibold">200 convidados</strong> no Pilarzinho. Casamentos, 15 anos, corporativo e aniversários com estrutura completa em um só lugar.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto" data-aos="fade-up" data-aos-delay="300">
+                <a href="#formulario" class="btn-premium px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2">
+                    <i class="fas fa-pen-to-square text-lg"></i> Solicitar Orçamento
+                </a>
+                <a href="#eventos" class="btn-outline-premium px-10 py-4 rounded-full font-bold uppercase tracking-widest text-sm flex items-center justify-center">
+                    Explorar Espaço
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#historia" class="text-brand-gold opacity-70 hover:opacity-100 transition-opacity">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- História (Asymmetric Image Left Layout) -->
+    <section id="historia" class="py-24 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-brand-gold rounded-2xl transform translate-x-4 translate-y-4 opacity-20"></div>
+                    <div id="historia-carrossel" class="carousel historia-carousel relative z-10 rounded-2xl shadow-2xl overflow-hidden" role="region" aria-roledescription="carrossel" aria-label="Galeria Tradição e Elegância" data-autoplay="true" data-interval="4000">
+                        <div class="carousel__viewport">
+                            <div id="historia-carousel-track" class="carousel__track">
+                                <div class="carousel__slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 3">
+                                    <img src="assets/img/salao-corporativo-mesas-redondas-lg.webp" srcset="assets/img/salao-corporativo-mesas-redondas-md.webp 800w, assets/img/salao-corporativo-mesas-redondas-lg.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Salão amplo montado para receber convidados no Espaço Pirâmide" loading="eager" decoding="async">
+                                </div>
+                                <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 de 3">
+                                    <img src="assets/img/sala-festa-lustre-cristal-roxo-lg.webp" srcset="assets/img/sala-festa-lustre-cristal-roxo-md.webp 800w, assets/img/sala-festa-lustre-cristal-roxo-lg.webp 985w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Recepção de casamento com lustre de cristal" loading="lazy" decoding="async">
+                                </div>
+                                <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 de 3">
+                                    <img src="assets/img/salao-formatura-painel-led-lg.webp" srcset="assets/img/salao-formatura-painel-led-md.webp 800w, assets/img/salao-formatura-painel-led-lg.webp 1200w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Festa de formatura com palco e painel de LED" loading="lazy" decoding="async">
+                                </div>
+                            </div>
+                            <div class="carousel__progress" aria-hidden="true">
+                                <div class="carousel__progress-bar" id="historia-carousel-progress"></div>
+                            </div>
+                            <button type="button" class="carousel__btn carousel__btn--prev" id="historia-carousel-prev" aria-label="Foto anterior">
+                                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="carousel__btn carousel__btn--next" id="historia-carousel-next" aria-label="Próxima foto">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="carousel__footer">
+                            <span class="carousel__counter" id="historia-carousel-counter" aria-live="polite">1 / 3</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Tradição & Elegância</h2>
+                    <h3 class="text-5xl font-bold text-white mb-8">Uma História de Família</h3>
+                    <p class="text-brand-gray text-lg font-light mb-6 leading-relaxed">
+                        O Espaço Pirâmide nasceu quando a família construiu o salão para celebrar um 15 anos. Hoje, há sete anos, Vinicius e a equipe cuidam de cada detalhe com precisão e sofisticação, em um ambiente preparado para receber até 200 convidados com conforto.
+                    </p>
+                    
+                    <div class="space-y-6 mt-10">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center shrink-0">
+                                <i class="fas fa-users text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Até 200 Convidados</h4>
+                                <p class="text-brand-gray text-sm">Salão amplo para festas maiores sem perder a intimidade do seu evento.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center shrink-0">
+                                <i class="fas fa-utensils text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Alta Gastronomia</h4>
+                                <p class="text-brand-gray text-sm">Buffet completo e premium integrado ao espaço.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full border border-brand-gold/30 flex items-center justify-center shrink-0">
+                                <i class="fas fa-music text-brand-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium mb-1">Experiência Imersiva</h4>
+                                <p class="text-brand-gray text-sm">DJ, cerimonial e fotografia com parceiros renomados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="py-24" aria-labelledby="galeria-titulo">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Portfólio</p>
+                <h2 id="galeria-titulo" class="text-4xl md:text-5xl font-bold text-white mb-4">Galeria de Eventos</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mb-4" aria-hidden="true"></div>
+                <p class="text-brand-gray font-light text-sm sm:text-base max-w-2xl mx-auto">Momentos reais de quem celebrou conosco: casamentos, corporativos, debutantes e muito mais.</p>
+            </div>
+
+            <div id="galeria-carrossel" class="carousel" role="region" aria-roledescription="carrossel" aria-label="Galeria de fotos dos eventos" data-autoplay="true" data-interval="5000">
+                <div class="carousel__viewport" data-aos="fade-up">
+                    <div id="carousel-track" class="carousel__track"></div>
+                    <div class="carousel__progress" aria-hidden="true">
+                        <div class="carousel__progress-bar" id="carousel-progress-bar"></div>
+                    </div>
+                    <button type="button" class="carousel__btn carousel__btn--prev" id="carousel-prev" aria-label="Foto anterior">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="carousel__btn carousel__btn--next" id="carousel-next" aria-label="Próxima foto">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="carousel__footer">
+                    <span class="carousel__counter" id="carousel-counter" aria-live="polite">1 / 12</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Evento -->
+    <section id="eventos" class="eventos-light py-24 bg-white" aria-labelledby="eventos-titulo">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Celebrações</p>
+                <h2 id="eventos-titulo" class="text-4xl md:text-5xl font-bold text-brand-black mb-4 uppercase">Tipos de Evento</h2>
+                <div class="eventos-divider w-16 h-1 mx-auto mb-4" aria-hidden="true"></div>
+                <p class="text-gray-500 font-light text-sm sm:text-base max-w-2xl mx-auto">Do corporativo ao casamento: estrutura completa para cada ocasião especial.</p>
+            </div>
+
+            <!-- 1. Debutantes / 15 Anos -->
+            <article id="debutantes" class="mb-16 sm:mb-24">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">15 Anos</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-black mb-3 uppercase">Debutantes / 15 Anos</h3>
+                            <div class="eventos-divider w-10 h-px mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">A data mais especial, onde tudo começou para o Espaço Pirâmide. Estrutura completa para uma celebração inesquecível dos 15 anos.</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="#formulario" class="btn-outline-premium px-8 py-3 rounded-full text-sm uppercase tracking-widest inline-flex items-center gap-2"><i class="fas fa-chevron-down" aria-hidden="true"></i> Orçar debutante</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria debutantes">
+                    <figure class="produto-card" data-aos="fade-up">
+                        <img src="assets/img/lustre-cristal-mesa-doces-espelhada-lg.webp" srcset="assets/img/lustre-cristal-mesa-doces-espelhada-lg.webp 800w, assets/img/lustre-cristal-mesa-doces-espelhada-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Mesa de doces decorada para festa de 15 anos" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">15 Anos</p>
+                            <p class="produto-card__desc">A data mais especial, onde tudo começou para o Espaço Pirâmide.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/img/mesa-bolo-50anos-espelhada-lg.webp" srcset="assets/img/mesa-bolo-50anos-espelhada-lg.webp 800w, assets/img/mesa-bolo-50anos-espelhada-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Mesa de doces e bolo de aniversário" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Decoração Completa</p>
+                            <p class="produto-card__desc">Ambiente preparado para momentos únicos com quem você ama.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/img/salao-formatura-pista-estrelas-md.webp" srcset="assets/img/salao-formatura-pista-estrelas-md.webp 800w, assets/img/salao-formatura-pista-estrelas-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Palco com iluminação, som e pista de dança LED" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">DJ da Casa</p>
+                            <p class="produto-card__desc">Parceiros fixos para animar a pista a noite toda.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- 2. Casamentos -->
+            <article id="casamentos" class="mb-16 sm:mb-24">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">União &amp; Festa</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-black mb-3 uppercase">Casamentos &amp; Recepções</h3>
+                            <div class="eventos-divider w-10 h-px mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">Cerimônia na igreja e festa conosco, o formato mais procurado. Ambiente elegante para receber família e amigos após o "sim".</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="#formulario" class="btn-outline-premium px-8 py-3 rounded-full text-sm uppercase tracking-widest inline-flex items-center gap-2"><i class="fas fa-chevron-down" aria-hidden="true"></i> Orçar casamento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria casamentos">
+                    <figure class="produto-card" data-aos="fade-up">
+                        <img src="assets/img/sala-festa-lustre-cristal-roxo-md.webp" srcset="assets/img/sala-festa-lustre-cristal-roxo-md.webp 800w, assets/img/sala-festa-lustre-cristal-roxo-lg.webp 985w" sizes="(min-width: 768px) 33vw, 100vw" alt="Recepção de casamento com lustre de cristal" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Recepção Completa</p>
+                            <p class="produto-card__desc">Buffet, decoração e estrutura para a festa após a cerimônia.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/img/hall-entrada-lounge-lg.webp" srcset="assets/img/hall-entrada-lounge-lg.webp 800w, assets/img/hall-entrada-lounge-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Lounge decorado para recepção dos convidados" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Ambiente Acolhedor</p>
+                            <p class="produto-card__desc">Salão preparado para momentos íntimos com quem você ama.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/img/mesa-doces-espelhada-orquideas-md.webp" srcset="assets/img/mesa-doces-espelhada-orquideas-md.webp 800w, assets/img/mesa-doces-espelhada-orquideas-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Buffet de doces em recepção de casamento" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Pacote Completo</p>
+                            <p class="produto-card__desc">DJ, buffet e staff, tudo sob medida para o seu grande dia.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- 3. Formaturas -->
+            <article id="formaturas" class="mb-16 sm:mb-24">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">Conclusão de Ciclo</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-black mb-3 uppercase">Formaturas</h3>
+                            <div class="eventos-divider w-10 h-px mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">18 anos e formaturas, as datas que marcam a vida. Espaço versátil para ensaios fotográficos e festas de conclusão.</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="#formulario" class="btn-outline-premium px-8 py-3 rounded-full text-sm uppercase tracking-widest inline-flex items-center gap-2"><i class="fas fa-chevron-down" aria-hidden="true"></i> Orçar formatura</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria formaturas">
+                    <figure class="produto-card" data-aos="fade-up">
+                        <img src="assets/img/salao-formatura-mesa-flores-md.webp" srcset="assets/img/salao-formatura-mesa-flores-md.webp 800w, assets/img/salao-formatura-mesa-flores-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Salão montado para festa de formatura" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Formatura</p>
+                            <p class="produto-card__desc">Espaço versátil para ensaios fotográficos e festas de conclusão.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/img/salao-formatura-painel-led-md.webp" srcset="assets/img/salao-formatura-painel-led-md.webp 800w, assets/img/salao-formatura-painel-led-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Festa de formatura com palco em LED" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Palco &amp; LED</p>
+                            <p class="produto-card__desc">Estrutura completa com palco, som e iluminação profissional.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/img/mesa-jantar-flores-azuis-lg.webp" srcset="assets/img/mesa-jantar-flores-azuis-lg.webp 800w, assets/img/mesa-jantar-flores-azuis-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Mesa posta para jantar de formatura" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Banquete</p>
+                            <p class="produto-card__desc">Mesas postas e buffet para celebrar a conquista com estilo.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- 4. Corporativos -->
+            <article id="corporativo">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">Empresas &amp; Equipes</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-black mb-3 uppercase">Corporativos</h3>
+                            <div class="eventos-divider w-10 h-px mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">Confraternizações de fim e início de ano, reuniões, networking e eventos empresariais, práticos de organizar e fáceis de acessar.</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="#formulario" class="btn-outline-premium px-8 py-3 rounded-full text-sm uppercase tracking-widest inline-flex items-center gap-2"><i class="fas fa-chevron-down" aria-hidden="true"></i> Orçar corporativo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria corporativo">
+                    <figure class="produto-card" data-aos="fade-up">
+                        <img src="assets/img/corporativo-treinamento-audiencia-md.webp" srcset="assets/img/corporativo-treinamento-audiencia-sm.webp 400w, assets/img/corporativo-treinamento-audiencia-md.webp 800w, assets/img/corporativo-treinamento-audiencia-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Treinamento corporativo com palestrante e plateia no Espaço Pirâmide" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Confraternização</p>
+                            <p class="produto-card__desc">Dezembro e janeiro, épocas ideais para reunir a equipe.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/img/corporativo-palestra-auditorio-md.webp" srcset="assets/img/corporativo-palestra-auditorio-sm.webp 400w, assets/img/corporativo-palestra-auditorio-md.webp 800w, assets/img/corporativo-palestra-auditorio-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Palestra corporativa em auditório com plateia atenta" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Reuniões &amp; Encontros</p>
+                            <p class="produto-card__desc">Estrutura para encontros profissionais e networking.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/img/corporativo-apresentacao-palco-md.webp" srcset="assets/img/corporativo-apresentacao-palco-sm.webp 400w, assets/img/corporativo-apresentacao-palco-md.webp 800w, assets/img/corporativo-apresentacao-palco-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Apresentação corporativa no palco com projeção e público" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Parcerias Recorrentes</p>
+                            <p class="produto-card__desc">Empresas que voltam mês a mês, confiança construída no dia a dia.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Buffet / Restaurante -->
+    <section id="buffet" class="py-24 bg-brand-black border-t border-brand-gold/10" aria-labelledby="buffet-titulo">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative overflow-hidden rounded-2xl bg-brand-dark border border-brand-gold/15 aspect-[4/3] flex items-center justify-center" data-aos="fade-right">
+                    <div class="text-center p-8">
+                        <i class="fas fa-utensils text-brand-gold text-5xl mb-4 opacity-50" aria-hidden="true"></i>
+                        <p class="text-brand-gray text-sm uppercase tracking-widest">Imagem em breve</p>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <p class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Gastronomia</p>
+                    <h2 id="buffet-titulo" class="text-4xl md:text-5xl font-bold text-white mb-6">Buffet / Restaurante</h2>
+                    <div class="w-16 h-1 bg-brand-gold mb-6" aria-hidden="true"></div>
+                    <p class="text-brand-gray text-lg font-light leading-relaxed mb-6">
+                        Conteúdo e imagens desta seção serão atualizados em breve. Nossa gastronomia integrada ao espaço oferece uma experiência completa para o seu evento.
+                    </p>
+                    <a href="#formulario" class="btn-outline-premium px-8 py-3 rounded-full text-sm uppercase tracking-widest inline-flex items-center gap-2"><i class="fas fa-chevron-down" aria-hidden="true"></i> Saber mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pacotes (Pricing Table Style) -->
+    <section id="pacotes" class="py-24 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Investimento</h2>
+                <h3 class="text-5xl font-bold text-white">Nossos Pacotes</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                
+                <!-- Basic -->
+                <div class="glass-card rounded-2xl p-8 border border-brand-gray/20" data-aos="fade-up" data-aos-delay="0">
+                    <h4 class="text-2xl font-bold text-white mb-2">Somente Salão</h4>
+                    <p class="text-brand-gray text-sm mb-8">Ideal para ensaios e eventos menores.</p>
+                    <ul class="space-y-4 mb-8 text-sm text-brand-light">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Locação do espaço</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Condições especiais na semana</li>
+                        <li class="flex items-center gap-3 opacity-50"><i class="fas fa-times"></i> Buffet incluso</li>
+                    </ul>
+                    <a href="#formulario" class="flex items-center justify-center gap-2 border border-white/20 hover:border-brand-gold text-white py-3 rounded-full transition-colors uppercase tracking-widest text-sm"><i class="fas fa-chevron-down" aria-hidden="true"></i> Consultar</a>
+                </div>
+
+                <!-- Premium (Highlighted) -->
+                <div class="glass-card rounded-2xl p-10 border border-brand-gold shadow-[0_0_30px_rgba(212,175,55,0.15)] relative transform md:-translate-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-gold text-brand-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest">Mais Procurado</div>
+                    <h4 class="text-3xl font-bold text-white mb-2 text-center mt-4">Pacote Completo</h4>
+                    <p class="text-brand-gold text-sm mb-8 text-center">A experiência premium definitiva.</p>
+                    <ul class="space-y-4 mb-10 text-sm text-brand-light">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Buffet Completo Alta Gastronomia</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> DJ e Iluminação</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Staff especializado</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Assessoria do evento</li>
+                    </ul>
+                    <a href="#formulario" class="btn-premium flex items-center justify-center gap-2 py-4 rounded-full uppercase tracking-widest font-bold text-sm shadow-lg"><i class="fas fa-chevron-down" aria-hidden="true"></i> Orçamento Personalizado</a>
+                </div>
+
+                <!-- Standard -->
+                <div class="glass-card rounded-2xl p-8 border border-brand-gray/20" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-2xl font-bold text-white mb-2">Salão + Buffet</h4>
+                    <p class="text-brand-gray text-sm mb-8">Espaço e gastronomia de excelência.</p>
+                    <ul class="space-y-4 mb-8 text-sm text-brand-light">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Locação do espaço</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-gold"></i> Buffet da casa</li>
+                        <li class="flex items-center gap-3 opacity-50"><i class="fas fa-times"></i> DJ incluso</li>
+                    </ul>
+                    <a href="#formulario" class="flex items-center justify-center gap-2 border border-white/20 hover:border-brand-gold text-white py-3 rounded-full transition-colors uppercase tracking-widest text-sm"><i class="fas fa-chevron-down" aria-hidden="true"></i> Consultar</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-24 bg-brand-black border-t border-brand-gold/10" aria-labelledby="depoimentos-titulo">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 id="depoimentos-titulo" class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Avaliações</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white mb-4">O Que Dizem Sobre Nós</h3>
+            </div>
+
+            <div class="reviews-widget reviews-widget--dark" data-reviews-carousel role="region" aria-roledescription="carrossel" aria-label="Avaliações do Google">
+                <div class="reviews-widget__header">
+                    <div class="reviews-widget__google">
+                        <svg class="reviews-widget__google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Avaliações no Google
+                    </div>
+                    <div class="reviews-widget__score">
+                        <span class="reviews-widget__stars" aria-hidden="true">★★★★★</span>
+                        <span>5,0 · 100+ avaliações</span>
+                    </div>
+                </div>
+                <div class="reviews-widget__viewport">
+                    <div class="reviews-widget__track"></div>
+                </div>
+                <div class="reviews-widget__footer">
+                    <button type="button" class="reviews-widget__btn reviews-widget__btn--prev bg-brand-gold text-brand-black" aria-label="Avaliação anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <div class="reviews-widget__dots"></div>
+                    <button type="button" class="reviews-widget__btn reviews-widget__btn--next bg-brand-gold text-brand-black" aria-label="Próxima avaliação"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#formulario" class="btn-premium inline-flex items-center gap-2 px-8 py-3 rounded-full uppercase tracking-widest font-bold text-sm"><i class="fas fa-chevron-down text-lg" aria-hidden="true"></i> Quero Celebrar Aqui</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="autoridade" class="py-24 bg-[#0a0a0a] border-t border-brand-gold/10" aria-labelledby="autoridade-titulo">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 id="autoridade-titulo" class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Por Que Escolher</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">Nossos Diferenciais</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="glass-card rounded-2xl p-10 text-center hover-gold transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up">
+                    <div class="w-20 h-20 mx-auto bg-brand-dark rounded-full border border-brand-gold/30 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                        <i class="fas fa-calendar-check text-brand-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">7 Anos</h3>
+                    <p class="text-brand-gold text-xs uppercase tracking-[0.2em] mb-4">De História</p>
+                    <p class="text-brand-gray text-sm font-light">Referência em celebrações na região central de Curitiba.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-10 text-center hover-gold transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto bg-brand-dark rounded-full border border-brand-gold/30 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                        <i class="fas fa-star text-brand-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">5 Estrelas</h3>
+                    <p class="text-brand-gold text-xs uppercase tracking-[0.2em] mb-4">No Google</p>
+                    <p class="text-brand-gray text-sm font-light">Centenas de avaliações reais de quem já celebrou conosco.</p>
+                </div>
+
+                <div class="glass-card rounded-2xl p-10 text-center hover-gold transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto bg-brand-dark rounded-full border border-brand-gold/30 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                        <i class="fas fa-building text-brand-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">Estrutura Completa</h3>
+                    <p class="text-brand-gold text-xs uppercase tracking-[0.2em] mb-4">Tudo em Um Só Lugar</p>
+                    <p class="text-brand-gray text-sm font-light">Espaço com estrutura completa para realização dos seus eventos.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Orçamento -->
+    <section id="formulario" class="py-24 bg-[#0a0a0a] border-t border-brand-gold/10 scroll-mt-8" aria-labelledby="formulario-titulo">
+        <div class="max-w-xl mx-auto px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <p class="text-brand-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">Orçamento</p>
+                <h2 id="formulario-titulo" class="text-3xl md:text-4xl font-bold text-white mb-4">Solicite seu Orçamento</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto mb-4" aria-hidden="true"></div>
+                <p class="text-brand-gray font-light text-sm">Preencha as informações abaixo e entraremos em contato.</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 md:p-10" data-aos="fade-up">
+                <div class="form-progress" aria-hidden="true">
+                    <span class="form-progress__dot is-active" data-progress="1"></span>
+                    <span class="form-progress__dot" data-progress="2"></span>
+                    <span class="form-progress__dot" data-progress="3"></span>
+                </div>
+
+                <form id="orcamento-form" novalidate>
+                    <div class="form-step is-active" data-step="1">
+                        <label class="form-label" for="convidados">Número de pessoas para o evento</label>
+                        <input type="text" inputmode="numeric" pattern="[0-9]+" id="convidados" name="convidados" class="form-field" placeholder="Ex: 150" autocomplete="off" required>
+                        <p class="form-error" id="error-convidados">Informe apenas números.</p>
+                        <button type="button" class="btn-premium w-full mt-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm" data-form-next>Próximo</button>
+                    </div>
+
+                    <div class="form-step" data-step="2">
+                        <label class="form-label" for="tipo-evento">Tipo de Evento</label>
+                        <input type="text" id="tipo-evento" name="tipo-evento" class="form-field" placeholder="Ex: Casamento, 15 anos, Corporativo" maxlength="80" required>
+                        <p class="form-error" id="error-tipo-evento">Informe o tipo de evento.</p>
+                        <div class="flex gap-4 mt-8">
+                            <button type="button" class="btn-outline-premium flex-1 py-4 rounded-full font-bold uppercase tracking-widest text-sm" data-form-prev>Voltar</button>
+                            <button type="button" class="btn-premium flex-1 py-4 rounded-full font-bold uppercase tracking-widest text-sm" data-form-next>Próximo</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step" data-step="3">
+                        <label class="form-label" for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" class="form-field mb-6" placeholder="Seu nome completo" autocomplete="name" required>
+                        <p class="form-error" id="error-nome">Informe seu nome.</p>
+
+                        <label class="form-label" for="telefone">Número de telefone</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-field" placeholder="(41) 99999-9999" autocomplete="tel" required>
+                        <p class="form-error" id="error-telefone">Informe um telefone válido.</p>
+
+                        <div class="flex gap-4 mt-8">
+                            <button type="button" class="btn-outline-premium flex-1 py-4 rounded-full font-bold uppercase tracking-widest text-sm" data-form-prev>Voltar</button>
+                            <button type="submit" class="btn-premium flex-1 py-4 rounded-full font-bold uppercase tracking-widest text-sm">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="form-success" id="form-success">
+                    <i class="fas fa-check-circle text-brand-gold text-5xl mb-4" aria-hidden="true"></i>
+                    <h3 class="text-2xl font-bold text-white mb-2">Solicitação enviada!</h3>
+                    <p class="text-brand-gray text-sm">Recebemos seus dados e entraremos em contato em breve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-[#050505] border-t border-brand-gold/10">
+        <div id="mapa" class="w-full" style="height:380px;">
+            <iframe
+                src="https://www.google.com/maps?q=Espa%C3%A7o+Pir%C3%A2mide+Eventos+Curitiba&output=embed&hl=pt-BR&z=13"
+                width="100%"
+                height="100%"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localização Espaço Pirâmide Eventos no Google Maps">
+            </iframe>
+        </div>
+        <div class="pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div>
+                <a href="#inicio" class="site-logo site-logo--footer" aria-label="Espaço Pirâmide Eventos">
+                    <img src="assets/img/logo-piramide-sm.webp" alt="Espaço Pirâmide Eventos" class="site-logo__img" width="320" height="129">
+                </a>
+                <p class="text-brand-gray text-sm font-light leading-relaxed">
+                    Salão para até 200 convidados no coração de Curitiba. Transformando datas especiais em memórias inesquecíveis.
+                </p>
+            </div>
+            
+            <div>
+                <h5 class="text-white font-bold text-xl mb-6">Contato</h5>
+                <ul class="space-y-4 text-brand-gray text-sm font-light">
+                    <li class="flex items-center gap-3"><i class="fab fa-whatsapp text-brand-gold"></i> (41) 98890-9600</li>
+                    <li class="flex items-start gap-3"><i class="fas fa-location-dot text-brand-gold mt-1"></i> Rua Orestes Beltrami, 330<br>Pilarzinho, Curitiba - PR</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5 class="text-white font-bold text-xl mb-6">Links</h5>
+                <ul class="space-y-3 text-brand-gray text-sm font-light">
+                    <li><a href="#inicio" class="hover:text-brand-gold transition-colors">Início</a></li>
+                    <li><a href="#historia" class="hover:text-brand-gold transition-colors">História</a></li>
+                    <li><a href="#galeria" class="hover:text-brand-gold transition-colors">Galeria</a></li>
+                    <li><a href="#eventos" class="hover:text-brand-gold transition-colors">Tipos de Evento</a></li>
+                    <li><a href="#buffet" class="hover:text-brand-gold transition-colors">Buffet</a></li>
+                    <li><a href="#formulario" class="hover:text-brand-gold transition-colors">Orçamento</a></li>
+                    <li><a href="#autoridade" class="hover:text-brand-gold transition-colors">Diferenciais</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold text-xl mb-6">Redes Sociais</h5>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-gold hover:border-brand-gold transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-gold hover:border-brand-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center border-t border-white/5 pt-8">
+            <p class="text-brand-gray text-xs">© 2026 Espaço Pirâmide Eventos. Todos os direitos reservados.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50
+            });
+        });
+
+    </script>
+    <script>
+    (function () {
+        function initCarousel(rootId, trackSelector, counterId, progressId, prevId, nextId, slideSelector) {
+            var root = document.getElementById(rootId);
+            if (!root) return;
+            var slides = root.querySelectorAll(slideSelector || '.carousel__slide');
+            var counterEl = document.getElementById(counterId);
+            var progressBar = document.getElementById(progressId);
+            var btnPrev = document.getElementById(prevId);
+            var btnNext = document.getElementById(nextId);
+            if (!slides.length) return;
+
+            var intervalMs = parseInt(root.getAttribute('data-interval'), 10) || 5000;
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var autoplay = root.getAttribute('data-autoplay') === 'true' && !prefersReducedMotion;
+            var current = 0;
+            var timer = null;
+
+            root.style.setProperty('--carousel-interval', intervalMs + 'ms');
+
+            function updateCounter() {
+                if (counterEl) counterEl.textContent = (current + 1) + ' / ' + slides.length;
+            }
+
+            function restartProgress() {
+                if (!progressBar) return;
+                progressBar.style.animation = 'none';
+                void progressBar.offsetWidth;
+                progressBar.style.animation = '';
+            }
+
+            function goTo(index) {
+                var total = slides.length;
+                current = ((index % total) + total) % total;
+                slides.forEach(function (slide, i) {
+                    slide.classList.toggle('is-active', i === current);
+                });
+                updateCounter();
+                restartProgress();
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            function startAutoplay() {
+                stopAutoplay();
+                if (!autoplay) return;
+                timer = setInterval(next, intervalMs);
+                root.classList.remove('is-paused');
+            }
+
+            function stopAutoplay() {
+                if (timer) { clearInterval(timer); timer = null; }
+                root.classList.add('is-paused');
+            }
+
+            updateCounter();
+            if (btnNext) btnNext.addEventListener('click', function () { next(); startAutoplay(); });
+            if (btnPrev) btnPrev.addEventListener('click', function () { prev(); startAutoplay(); });
+            root.addEventListener('mouseenter', stopAutoplay);
+            root.addEventListener('mouseleave', startAutoplay);
+            root.addEventListener('focusin', stopAutoplay);
+            root.addEventListener('focusout', function (e) {
+                if (!root.contains(e.relatedTarget)) startAutoplay();
+            });
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) stopAutoplay();
+                else startAutoplay();
+            });
+            startAutoplay();
+        }
+
+        initCarousel('historia-carrossel', '#historia-carousel-track', 'historia-carousel-counter', 'historia-carousel-progress', 'historia-carousel-prev', 'historia-carousel-next');
+    })();
+    </script>
+    <script>
+    (function () {
+        var CAROUSEL_SIZES = '(max-width: 600px) 100vw, (max-width: 1024px) calc(100vw - 48px), 1152px';
+        var ASSET_FILES = [
+            { src: 'assets/img/entrada-wonderland-personagens-lg.webp', srcset: 'assets/img/entrada-wonderland-personagens-sm.webp 400w, assets/img/entrada-wonderland-personagens-md.webp 800w, assets/img/entrada-wonderland-personagens-lg.webp 1200w', alt: 'Entrada da festa com personagens e placa Welcome to Wonderland' },
+            { src: 'assets/img/painel-floral-cogumelos-wonderland-lg.webp', srcset: 'assets/img/painel-floral-cogumelos-wonderland-sm.webp 400w, assets/img/painel-floral-cogumelos-wonderland-md.webp 800w, assets/img/painel-floral-cogumelos-wonderland-lg.webp 1200w', alt: 'Painel floral com cogumelos para fotos dos convidados' },
+            { src: 'assets/img/salao-15anos-pista-iluminada-azul-lg.webp', srcset: 'assets/img/salao-15anos-pista-iluminada-azul-sm.webp 400w, assets/img/salao-15anos-pista-iluminada-azul-md.webp 800w, assets/img/salao-15anos-pista-iluminada-azul-lg.webp 1200w', alt: 'Salão com pista iluminada em azul para festa de 15 anos' },
+            { src: 'assets/img/mesa-doces-orquideas-bolo-lg.webp', srcset: 'assets/img/mesa-doces-orquideas-bolo-sm.webp 400w, assets/img/mesa-doces-orquideas-bolo-md.webp 800w, assets/img/mesa-doces-orquideas-bolo-lg.webp 1200w', alt: 'Mesa de doces espelhada com bolo e orquídeas brancas' },
+            { src: 'assets/img/mesa-doces-lustre-cristal-lg.webp', srcset: 'assets/img/mesa-doces-lustre-cristal-sm.webp 400w, assets/img/mesa-doces-lustre-cristal-md.webp 800w, assets/img/mesa-doces-lustre-cristal-lg.webp 1200w', alt: 'Mesa de doces iluminada sob lustre de cristal' },
+            { src: 'assets/img/bolo-topo-15-doces-finos-lg.webp', srcset: 'assets/img/bolo-topo-15-doces-finos-sm.webp 400w, assets/img/bolo-topo-15-doces-finos-md.webp 800w, assets/img/bolo-topo-15-doces-finos-lg.webp 1200w', alt: 'Bolo de 15 anos com topo dourado e doces finos' },
+            { src: 'assets/img/palco-led-pista-danca-lg.webp', srcset: 'assets/img/palco-led-pista-danca-sm.webp 400w, assets/img/palco-led-pista-danca-md.webp 800w, assets/img/palco-led-pista-danca-lg.webp 1200w', alt: 'Palco com painéis de LED e pista de dança iluminada' },
+            { src: 'assets/img/cerimonia-homenagem-pista-lg.webp', srcset: 'assets/img/cerimonia-homenagem-pista-sm.webp 400w, assets/img/cerimonia-homenagem-pista-md.webp 800w, assets/img/cerimonia-homenagem-pista-lg.webp 1200w', alt: 'Cerimônia de homenagem na pista da festa de debutante' },
+            { src: 'assets/img/valsa-pai-debutante-lg.webp', srcset: 'assets/img/valsa-pai-debutante-sm.webp 400w, assets/img/valsa-pai-debutante-md.webp 800w, assets/img/valsa-pai-debutante-lg.webp 1200w', alt: 'Valsa da debutante com o pai na pista de dança' },
+            { src: 'assets/img/valsa-emocionante-debutante-lg.webp', srcset: 'assets/img/valsa-emocionante-debutante-sm.webp 400w, assets/img/valsa-emocionante-debutante-md.webp 800w, assets/img/valsa-emocionante-debutante-lg.webp 1200w', alt: 'Momento emocionante da valsa durante a festa de 15 anos' },
+            { src: 'assets/img/debutante-pista-hexagonal-lg.webp', srcset: 'assets/img/debutante-pista-hexagonal-sm.webp 400w, assets/img/debutante-pista-hexagonal-md.webp 800w, assets/img/debutante-pista-hexagonal-lg.webp 1200w', alt: 'Debutante dançando na pista hexagonal iluminada' },
+            { src: 'assets/img/efeito-fumaca-pista-lg.webp', srcset: 'assets/img/efeito-fumaca-pista-sm.webp 400w, assets/img/efeito-fumaca-pista-md.webp 800w, assets/img/efeito-fumaca-pista-lg.webp 1200w', alt: 'Celebração com efeito de fumaça e luzes na pista de dança' }
+        ];
+
+        var root = document.getElementById('galeria-carrossel');
+        var track = document.getElementById('carousel-track');
+        var counterEl = document.getElementById('carousel-counter');
+        var progressBar = document.getElementById('carousel-progress-bar');
+        var btnPrev = document.getElementById('carousel-prev');
+        var btnNext = document.getElementById('carousel-next');
+
+        if (!root || !track || !ASSET_FILES.length) return;
+
+        var intervalMs = parseInt(root.getAttribute('data-interval'), 10) || 5000;
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var autoplay = root.getAttribute('data-autoplay') === 'true' && !prefersReducedMotion;
+        var current = 0;
+        var slides = [];
+        var timer = null;
+
+        root.style.setProperty('--carousel-interval', intervalMs + 'ms');
+
+        function buildSlides() {
+            ASSET_FILES.forEach(function (item, i) {
+                var slide = document.createElement('div');
+                slide.className = 'carousel__slide' + (i === 0 ? ' is-active' : '');
+                slide.setAttribute('role', 'group');
+                slide.setAttribute('aria-roledescription', 'slide');
+                slide.setAttribute('aria-label', (i + 1) + ' de ' + ASSET_FILES.length);
+
+                var img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.alt;
+                img.loading = i === 0 ? 'eager' : 'lazy';
+                img.decoding = 'async';
+                if (item.srcset) { img.srcset = item.srcset; img.sizes = CAROUSEL_SIZES; }
+
+                slide.appendChild(img);
+                track.appendChild(slide);
+                slides.push(slide);
+            });
+        }
+
+        function updateCounter() {
+            counterEl.textContent = (current + 1) + ' / ' + ASSET_FILES.length;
+        }
+
+        function restartProgress() {
+            if (!progressBar) return;
+            progressBar.style.animation = 'none';
+            void progressBar.offsetWidth;
+            progressBar.style.animation = '';
+        }
+
+        function goTo(index) {
+            var total = slides.length;
+            current = ((index % total) + total) % total;
+            slides.forEach(function (slide, i) {
+                slide.classList.toggle('is-active', i === current);
+            });
+            updateCounter();
+            restartProgress();
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function startAutoplay() {
+            stopAutoplay();
+            if (!autoplay) return;
+            timer = setInterval(next, intervalMs);
+            root.classList.remove('is-paused');
+        }
+
+        function stopAutoplay() {
+            if (timer) { clearInterval(timer); timer = null; }
+            root.classList.add('is-paused');
+        }
+
+        buildSlides();
+        updateCounter();
+
+        btnNext.addEventListener('click', function () { next(); startAutoplay(); });
+        btnPrev.addEventListener('click', function () { prev(); startAutoplay(); });
+        root.addEventListener('mouseenter', stopAutoplay);
+        root.addEventListener('mouseleave', startAutoplay);
+        root.addEventListener('focusin', stopAutoplay);
+        root.addEventListener('focusout', function (e) {
+            if (!root.contains(e.relatedTarget)) startAutoplay();
+        });
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stopAutoplay();
+            else startAutoplay();
+        });
+        startAutoplay();
+    })();
+    </script>
+    <script src="assets/site-config.js"></script>
+    <script src="assets/reviews-carousel.js"></script>
+    <script>
+    (function () {
+        var form = document.getElementById('orcamento-form');
+        if (!form) return;
+
+        var steps = form.querySelectorAll('.form-step');
+        var progressDots = document.querySelectorAll('.form-progress__dot');
+        var successEl = document.getElementById('form-success');
+        var currentStep = 1;
+
+        function showStep(n) {
+            currentStep = n;
+            steps.forEach(function (step) {
+                step.classList.toggle('is-active', parseInt(step.getAttribute('data-step'), 10) === n);
+            });
+            progressDots.forEach(function (dot) {
+                var p = parseInt(dot.getAttribute('data-progress'), 10);
+                dot.classList.toggle('is-active', p === n);
+                dot.classList.toggle('is-done', p < n);
+            });
+            form.querySelector('.form-step.is-active input')?.focus();
+        }
+
+        function showError(id, visible) {
+            var el = document.getElementById(id);
+            if (el) el.classList.toggle('is-visible', visible);
+        }
+
+        function validateStep(n) {
+            if (n === 1) {
+                var val = document.getElementById('convidados').value.trim();
+                var ok = /^[0-9]+$/.test(val) && parseInt(val, 10) > 0;
+                showError('error-convidados', !ok);
+                return ok;
+            }
+            if (n === 2) {
+                var tipo = document.getElementById('tipo-evento').value.trim();
+                var ok = tipo.length >= 2;
+                showError('error-tipo-evento', !ok);
+                return ok;
+            }
+            if (n === 3) {
+                var nome = document.getElementById('nome').value.trim();
+                var tel = document.getElementById('telefone').value.replace(/\D/g, '');
+                var nomeOk = nome.length >= 2;
+                var telOk = tel.length >= 10;
+                showError('error-nome', !nomeOk);
+                showError('error-telefone', !telOk);
+                return nomeOk && telOk;
+            }
+            return true;
+        }
+
+        form.querySelectorAll('[data-form-next]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                if (!validateStep(currentStep)) return;
+                showStep(currentStep + 1);
+            });
+        });
+
+        form.querySelectorAll('[data-form-prev]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                showStep(currentStep - 1);
+            });
+        });
+
+        document.getElementById('convidados').addEventListener('input', function (e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!validateStep(3)) return;
+
+            var data = {
+                convidados: document.getElementById('convidados').value,
+                tipoEvento: document.getElementById('tipo-evento').value.trim(),
+                nome: document.getElementById('nome').value.trim(),
+                telefone: document.getElementById('telefone').value.trim()
+            };
+
+            if (window.dataLayer) {
+                window.dataLayer.push({ event: 'form_submit', formName: 'orcamento', formData: data });
+            }
+
+            form.classList.add('is-submitted');
+            document.querySelector('.form-progress').style.display = 'none';
+            successEl.classList.add('is-visible');
+        });
+    })();
+    </script>
+</body>
+</html>
