@@ -3,41 +3,21 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-SRC_HTML="$ROOT/index.html"
 
 echo "→ Build produção (versão dark) para Cloudflare Pages"
 
 rm -rf "$DIST"
 mkdir -p "$DIST/assets/img"
 
-sed \
-  -e 's/Espaço Pirâmide Eventos | Premium Dark/Espaço Pirâmide Eventos | Curitiba/' \
-  "$SRC_HTML" > "$DIST/index.html"
+cp "$ROOT/index.html" "$DIST/index.html"
 
 cp "$ROOT/assets/reviews-carousel.css" "$DIST/assets/"
 cp "$ROOT/assets/reviews-carousel.js" "$DIST/assets/"
 cp "$ROOT/assets/site-config.js" "$DIST/assets/"
 
-IMAGES=(
-  logo-sm.webp logo-lg.webp
-  AR2A0823-xl.webp AR2A0823-lg.webp AR2A0823-md.webp
-  BL7A8783-lg.webp BL7A8783-md.webp
-  IMG_1747-lg.webp IMG_1747-md.webp
-  BL7A8780-lg.webp BL7A8780-md.webp
-  IMG_9853-lg.webp
-  AR2A0826-lg.webp
-  IMG_9851-lg.webp
-  BL7A8787-lg.webp
-)
-
-for img in "${IMAGES[@]}"; do
-  src="$ROOT/assets/img/$img"
-  if [[ ! -f "$src" ]]; then
-    echo "ERRO: imagem ausente: $src" >&2
-    echo "Execute: npm run build:images" >&2
-    exit 1
-  fi
-  cp "$src" "$DIST/assets/img/"
+for img in "$ROOT/assets/img"/*.webp; do
+  [[ -f "$img" ]] || continue
+  cp "$img" "$DIST/assets/img/"
 done
 
 cat > "$DIST/_headers" << 'EOF'

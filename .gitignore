@@ -13,6 +13,7 @@ wrangler.toml
 
 # Fotos originais (pesadas) — WebP otimizadas em assets/img/
 assets/FOTOS PRIME/
+assets/15 anos FOTOS PRIME/
 
 # Assets só para desenvolvimento local
 assets/print-*.png
