@@ -1,8 +1,8 @@
 /** Diretrizes gerais — Espaço Pirâmide Eventos */
 window.SITE_CONFIG = {
     businessName: 'Espaço Pirâmide Eventos',
-    whatsappPhone: '5541988909600',
-    whatsappDisplay: '(41) 98890-9600',
+    whatsappPhone: '5541992563751',
+    whatsappDisplay: '+55 (41) 99256-3751',
     /** Maps vinculado pelo nome da empresa (Google Meu Negócio). z=13 = visão afastada com bairros vizinhos. */
     mapsEmbedSrc: 'https://www.google.com/maps?q=Espa%C3%A7o+Pir%C3%A2mide+Eventos+Curitiba&output=embed&hl=pt-BR&z=13',
     googleRating: 5.0,

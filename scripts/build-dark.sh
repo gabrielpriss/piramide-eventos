@@ -14,8 +14,8 @@ mkdir -p "$DIST/assets/img" "$DIST/form"
 # Página principal (foco WhatsApp)
 cp "$SOURCE_WA" "$DIST/index.html"
 
-# Página /form (com formulário de orçamento)
-cp "$SOURCE_FORM" "$DIST/form/index.html"
+# Página /form — caminhos de assets absolutizados para evitar resolução relativa em subdiretório
+sed 's|src="assets/|src="/assets/|g; s|href="assets/|href="/assets/|g; s|srcset="assets/|srcset="/assets/|g; s| assets/| /assets/|g' "$SOURCE_FORM" > "$DIST/form/index.html"
 
 # Assets estáticos
 cp "$ROOT/assets/reviews-carousel.css" "$DIST/assets/"
@@ -121,7 +121,7 @@ Fundado há 7 anos pela família Pirâmide, o espaço é gerenciado por Vinicius
 
 ## Contato
 
-- WhatsApp: (41) 98890-9600 — https://wa.me/5541988909600
+- WhatsApp: +55 (41) 99256-3751 — https://wa.me/5541992563751
 - Orçamento online: https://xn--espaopiramideeventos-60b.com.br/form
 - Avaliação: 5 estrelas no Google
 
